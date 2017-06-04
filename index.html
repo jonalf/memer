@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <title>Memer</title>
+  </head>
+
+  <body>
+    <div class='container'>      
+      <h1 class="text-center">Memer</h1>
+      <form class="form-horizontal">
+	
+	<div class="row">
+	  <div class="col-sm-4">
+	    <input type="file" id="file">
+	  </div>
+
+	  <div class="col-sm-4">
+	    <textarea id="text" class="form-control" placeholder="meme text"></textarea>
+	  </div>
+	  <div class="col-sm-2">
+	    <a class="btn btn-default" id="size">Small Meme</a>
+	  </div>
+	  <div class="col-sm-2">
+	    <a class="btn btn-default" href="#" id="download" download="image.png">Meme Me</a>
+	  </div>
+
+	</div>
+	<hr>
+	<div class="row">
+	  <div class="col-sm-12" align="center">
+	    <canvas id="slate" class="img-responsive"></canvas>
+	  </div>
+	</div>
+
+    </div>
+
+    <script src="bootstrap/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="memer.js"></script>
+  </body>
+</html>
