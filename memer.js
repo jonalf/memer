@@ -95,17 +95,22 @@ var addText = function( text ) {
     var y = c.height - (lineHeight * (lines.length-1)) - 5;
     
     for (var i=0; i < lines.length; i++) {
+
+	var word = lines[i];
+	var w = ctx.measureText(word).width;
+	var x = c.width/2.0 -  w/2.0;
+
 	//setup outline
 	ctx.shadowColor = "black";
 	ctx.shadowBlur = 5;
 	ctx.lineJoin = 'bevel';
 	ctx.lineWidth = 5;
-	ctx.strokeText(lines[i]['text'], lines[i]['x'], y);
+	ctx.strokeText(word, x, y);
 	
 	//setup text
 	ctx.shadowBlur = 0;
 	ctx.fillStyle = "white";
-	ctx.fillText(lines[i]['text'], lines[i]['x'], y);
+	ctx.fillText(word, x, y);
 
 	
 	y+= lineHeight;
@@ -146,15 +151,15 @@ var resizeLines = function( text ) {
 	    if ( w >= c.width ||
 	       words.length == 0) {
 		w = ctx.measureText(subText).width;
-		x = c.width/2.0 -  w/2.0;
-		ls.push( {'text':subText, 'x':x});
+		//x = c.width/2.0 -  w/2.0;
+		ls.push( subText );
 		subText = '';
 	    }
 	}	
 	return ls;
     }
     else
-	return [{'text' : text, 'x':x}];
+	return [ text ];
 };
 
 var setFontSize = function(word) {
