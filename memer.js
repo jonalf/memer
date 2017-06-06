@@ -176,7 +176,7 @@ var clear = function(e) {
 };
 
 var saveImage = function(e) {
-    this.href = c.toDataURL('image/png');//.replace("image/png", "image/octet-stream");
+    this.href = c.toDataURL('image/jpeg', 0.9);
 };
 
 
